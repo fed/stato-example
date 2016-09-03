@@ -1,17 +1,17 @@
 @value green: #3cca5e;
-@value blue: #056ef0;
-@value yellow: #ffd11a;
 @value red: #f2565a;
-@value denim: #24303C;
-@value denimDark: #212C37;
-@value denimLight: #283644;
-@value darkGrey: #454A54;
-@value midGrey: #788090;
-@value lightGrey: #CED440;
-@value ivory: #f7f7f7;
+
+:global {
+  body {
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
 
 .itemActive {
-  font-weight: bold;
+  font-style: italic;
 }
 
 .itemDone {
@@ -22,6 +22,7 @@
 .input {
   border: 1px solid #ccc;
   border-radius: 3px;
+  font-size: 14px;
   max-width: 300px;
   padding: 10px;
   width: 100%;
@@ -31,7 +32,10 @@
   border: 0;
   border-radius: 3px;
   color: #fff;
-  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 10px;
+  margin-left: 5px;
+  padding: 3px 6px;
   text-transform: uppercase;
 }
 
