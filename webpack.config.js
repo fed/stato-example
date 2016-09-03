@@ -1,3 +1,4 @@
+var StyleLintPlugin = require('stylelint-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var precss = require('precss');
 var values = require('postcss-modules-values');
@@ -36,6 +37,15 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new StyleLintPlugin({
+      configFile: '.stylelintrc',
+      context: 'src',
+      files: '{,**/}*.css',
+      failOnError: false,
+      quiet: false
+    })
+  ],
   eslint: {
     failOnWarning: false,
     failOnError: true
