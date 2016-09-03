@@ -1,3 +1,7 @@
+var autoprefixer = require('autoprefixer');
+var precss = require('precss');
+var values = require('postcss-modules-values');
+
 module.exports = {
   entry: './src',
   output: {
@@ -25,11 +29,18 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader?modules=true&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader'
       }
     ]
   },
   eslint: {
     failOnWarning: false,
     failOnError: true
+  },
+  postcss: function () {
+    return [values, autoprefixer, precss];
   }
 };

@@ -1,0 +1,36 @@
+.todo {
+
+}
+
+.todo__item--active {
+
+}
+
+.todo__item--done {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.todo__input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  max-width: 300px;
+  padding: 10px;
+  width: 100%;
+}
+
+.todo__button {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 0;
+  text-transform: uppercase;
+}
+
+.todo__button--done {
+  background-color: green;
+}
+
+.todo__button--remove {
+  background-color: red;
+}
