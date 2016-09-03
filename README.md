@@ -24,8 +24,9 @@ The fundamental idea behind this approach is that every user-triggered action ge
 | `npm install` | Fetch dependencies and build binaries for any of the modules |
 | `npm start` | Fire up Webpack Dev Server, app will go live on `http://localhost:6789` |
 | `npm run build` | Build `bundle.js` file |
-| `npm test` | Run test suite |
 
-# Credits
+# Complementary Reading
 
-This project is inspired on [this post](https://medium.com/@milankinen/good-bye-flux-welcome-bacon-rx-23c71abfb1a7) and on my previous work experience.
+* https://medium.com/@milankinen/good-bye-flux-welcome-bacon-rx-23c71abfb1a7
+* http://blog.hertzen.com/post/102991359167/flux-inspired-reactive-data-flow-using-react-and
+* http://www.aryweb.nl/2015/02/16/Reactive-React-using-reactive-streams/
