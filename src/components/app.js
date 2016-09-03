@@ -8,7 +8,6 @@ export default class App extends React.Component {
       <section>
         <header>
           <h1>Bacon-powered TODO List</h1>
-          <p>Built using <a href="https://facebook.github.io/react/">React</a> and <a href="https://baconjs.github.io/">Bacon.js</a>. Have a look at the source code <a href="https://github.com/fknussel/bacon-react">here</a>.</p>
         </header>
 
         <Create />
