@@ -1,46 +1,6 @@
 import Bacon from 'baconjs';
-import remove from 'lodash/remove';
-import assign from 'lodash/assign';
-import Dispatcher from './dispatcher';
-
-const dispatcher = new Dispatcher();
-
-// Reducers
-function createItemReducer(state, newItemTitle) {
-  const items = state.items.concat([{
-    id: Date.now(),
-    title: newItemTitle,
-    isDone: false
-  }]);
-
-  return assign({}, state, { items });
-}
-
-function removeItemReducer(state, itemId) {
-  const items = state.items.slice();
-
-  remove(items, (item) => item.id === itemId);
-
-  return assign({}, state, { items });
-}
-
-function markItemAsDoneReducer(state, itemId) {
-  const items = state.items.map((item) => {
-    if (item.id === itemId) {
-      item.isDone = true;
-    }
-
-    return item;
-  });
-
-  return assign({}, state, { items });
-}
-
-function addCountryReducer(state, newCountry) {
-  const countries = state.countries.concat([newCountry]);
-
-  return assign({}, state, { countries });
-}
+import dispatcher from './dispatcher';
+import * as reducers from '../reducers';
 
 // Actions
 export function createItem(title) {
@@ -64,11 +24,11 @@ export function bindActionsToReducers(initialItems) {
     initialItems,
 
     // To do items
-    [dispatcher.stream('create')], createItemReducer,
-    [dispatcher.stream('remove')], removeItemReducer,
-    [dispatcher.stream('done')], markItemAsDoneReducer,
+    [dispatcher.stream('create')], reducers.createItem,
+    [dispatcher.stream('remove')], reducers.removeItem,
+    [dispatcher.stream('done')], reducers.markItemAsDone,
 
     // Countries
-    [dispatcher.stream('ADD_COUNTRY')], addCountryReducer
+    [dispatcher.stream('ADD_COUNTRY')], reducers.addCountry
   );
 }

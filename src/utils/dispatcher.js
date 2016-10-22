@@ -2,7 +2,7 @@ import Bacon from 'baconjs';
 
 const busCache = {};
 
-export default class Dispatcher {
+class Dispatcher {
   stream(name) {
     return this.bus(name);
   }
@@ -19,3 +19,7 @@ export default class Dispatcher {
     return busCache[name] = busCache[name] || new Bacon.Bus();
   }
 }
+
+const dispatcher = new Dispatcher();
+
+export default dispatcher;
