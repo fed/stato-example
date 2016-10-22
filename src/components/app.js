@@ -1,23 +1,24 @@
 import React from 'react';
-import Create from './create';
-import AddCountry from './addCountry';
-import List from './list';
+import CreateItem from './items/create';
+import ListItems from './items/list';
+import AddCountry from './countries/add';
+import ListCountries from './countries/list';
 
 export default class App extends React.Component {
   render() {
     return (
       <section>
         <header>
-          <h1>Bacon-powered TODO List</h1>
+          <h1>Functional Reactive State Management with Bacon.js</h1>
         </header>
 
-        <Create />
-        <List items={this.props.items} />
+        {/* To do items */}
+        <CreateItem />
+        <ListItems items={this.props.items} />
 
+        {/* Countries */}
         <AddCountry />
-        {this.props.countries.map((country, index) => (
-          <div key={index}>{country}</div>
-        ))}
+        <ListCountries countries={this.props.countries} />
       </section>
     );
   }
