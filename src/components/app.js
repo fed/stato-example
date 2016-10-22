@@ -1,5 +1,6 @@
 import React from 'react';
 import Create from './create';
+import AddCountry from './addCountry';
 import List from './list';
 
 export default class App extends React.Component {
@@ -12,11 +13,17 @@ export default class App extends React.Component {
 
         <Create />
         <List items={this.props.items} />
+
+        <AddCountry />
+        {this.props.countries.map((country, index) => (
+          <div key={index}>{country}</div>
+        ))}
       </section>
     );
   }
 }
 
 App.propTypes = {
-  items: React.PropTypes.array.isRequired
+  items: React.PropTypes.array.isRequired,
+  countries: React.PropTypes.array.isRequired
 };
