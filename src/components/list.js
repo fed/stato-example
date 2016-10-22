@@ -1,5 +1,5 @@
 import React from 'react';
-import {markItemAsDone, removeItem} from '../utils/todos';
+import {markItemAsDone, removeItem} from '../utils/update';
 import styles from './styles.css';
 
 export default class List extends React.Component {

@@ -1,5 +1,5 @@
 import React from 'react';
-import {addCountry} from '../utils/countries';
+import {addCountry} from '../utils/update';
 import styles from './styles.css';
 
 export default class Create extends React.Component {

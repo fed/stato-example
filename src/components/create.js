@@ -1,5 +1,5 @@
 import React from 'react';
-import {createItem} from '../utils/todos';
+import {createItem} from '../utils/update';
 import styles from './styles.css';
 
 export default class Create extends React.Component {

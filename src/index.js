@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Bacon from 'baconjs';
 import App from './components/app';
-import {toItemsProperty} from './utils/todos';
-import {toCountriesProperty} from './utils/countries';
+import {bindActionsToReducers} from './utils/update';
 
 const initialState = {
   items: [
@@ -26,14 +24,8 @@ const initialState = {
   ]
 };
 
-const items = toItemsProperty(initialState.items);
-const countries = toCountriesProperty(initialState.countries);
-
 // These are the props that will get passed in to the <App /> component
-const appState = Bacon.combineTemplate({
-  items,
-  countries
-});
+const appState = bindActionsToReducers(initialState);
 
 appState.onValue((props) => {
   ReactDOM.render(<App {...props} />, document.getElementById('app'));
