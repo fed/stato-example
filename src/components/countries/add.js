@@ -1,5 +1,5 @@
 import React from 'react';
-import {addCountry} from '../../actions';
+import {addCountry} from '../../state/actions';
 import styles from '../styles.css';
 
 export default class Create extends React.Component {

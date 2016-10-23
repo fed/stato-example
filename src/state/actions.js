@@ -1,6 +1,6 @@
 import store from '../../lib/store';
 
-// Actions
+// Helpers
 export function createItem(title) {
   store.push('CREATE_ITEM', title);
 }

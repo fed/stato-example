@@ -1,6 +1,7 @@
 import remove from 'lodash/remove';
 import assign from 'lodash/assign';
 
+// To do items
 export function createItem(state, newItemTitle) {
   const items = state.items.concat([{
     id: Date.now(),
@@ -29,4 +30,11 @@ export function markItemAsDone(state, itemId) {
   });
 
   return assign({}, state, { items });
+}
+
+// Countries
+export function addCountry(state, newCountry) {
+  const countries = state.countries.concat([newCountry]);
+
+  return assign({}, state, { countries });
 }
