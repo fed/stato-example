@@ -21,13 +21,17 @@ The fundamental idea behind this approach is that every user-triggered action ge
 
 ## What you need to do to start using `baconify`
 
-1. Define your action **types**:
+First grab the library here: https://www.npmjs.com/package/baconify
+
+1) Define your action **types**:
 
 ```js
 export const ADD_COUNTRY = 'ADD_COUNTRY';
 ```
 
-2. Create your **reducers**:
+2) Create your **reducers**:
+
+Reducers derive the next application state for a particular action. The first param is always the current state for the app, whereas the rest of the arguments are whatever payload your reducer needs.
 
 ```js
 export function addCountry(state, newCountry) {
@@ -37,7 +41,20 @@ export function addCountry(state, newCountry) {
 }
 ```
 
-3. Create your **initial state**:
+3) Map each action type to the corresponding reducer:
+
+```js
+export function reducers(type) {
+  switch (type) {
+    case ADD_COUNTRY:
+      return addCountry;
+  }
+}
+```
+
+4) Create your **initial state**:
+
+Make sure to initialise all models, here we could also have used an empty array `[]` for no initial countries.
 
 ```js
 const initialState = {
@@ -45,10 +62,10 @@ const initialState = {
 };
 ```
 
-4. Initialise your application state:
+5) Initialise your application state:
 
 ```js
-baconify(initialState, types, (props) => {
+baconify(initialState, types, reducers, (props) => {
   ReactDOM.render(<App {...props} />, document.getElementById('app'));
 });
 ```
