@@ -1,5 +1,4 @@
-import {createItem, removeItem, markItemAsDone} from './items';
-import {addCountry} from './countries';
+import {createItem, removeItem, markItemAsDone, addCountry} from './reducers';
 import {CREATE_ITEM, REMOVE_ITEM, MARK_ITEM_AS_DONE, ADD_COUNTRY} from './types';
 
 // Bind action types to reducers

@@ -4,7 +4,7 @@ export default class ListCountries extends React.Component {
   render() {
     return (
       <section>
-        <h2>Countries</h2>
+        <h2>Countries I've been to</h2>
         <ul>
           {
             this.props.countries.map((country, index) => (

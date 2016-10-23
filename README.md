@@ -1,5 +1,7 @@
 # Handling state with FRP instead of Flux on React Apps
 
+![Example Screenshot](http://i.imgur.com/O56jhnE.jpg)
+
 ## Motivation and proposed Architecture
 
 Just a lil bit of context first *re: functional reactive programming*. The most fundamental concept of [Functional Reactive Programming (FRP)](http://en.wikipedia.org/wiki/Functional_reactive_programming) is the **event stream**. Streams are like (immutable) arrays of events: they can be mapped, 
@@ -16,6 +18,40 @@ This makes the data flow dead simple:
 ![Application Architecture](http://i.imgur.com/57PHNjS.png)
 
 The fundamental idea behind this approach is that every user-triggered action gets pushed to the appropriate event stream, which is then merged in to the **application state** stream. Events take place at different points in time, and they cause the application state to change. Finally the updated state triggers a re-render of the root component, and React's virtual DOM takes care of the rest :tada: This results in **dead simple, dumb** React views.
+
+## What you need to do to start using `baconify`
+
+1. Define your action **types**:
+
+```js
+export const ADD_COUNTRY = 'ADD_COUNTRY';
+```
+
+2. Create your **reducers**:
+
+```js
+export function addCountry(state, newCountry) {
+  const countries = state.countries.concat([newCountry]);
+
+  return assign({}, state, { countries });
+}
+```
+
+3. Create your **initial state**:
+
+```js
+const initialState = {
+  countries: ['Australia', 'New Zealand']
+};
+```
+
+4. Initialise your application state:
+
+```js
+baconify(initialState, types, (props) => {
+  ReactDOM.render(<App {...props} />, document.getElementById('app'));
+});
+```
 
 ## Development Tasks
 

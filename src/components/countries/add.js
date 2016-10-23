@@ -31,7 +31,7 @@ export default class Create extends React.Component {
   render() {
     return (
       <input
-        placeholder="Which country is next?"
+        placeholder="Where else have you been to?"
         className={styles.input}
         value={this.state.text}
         onChange={this.handleTextChange.bind(this)}

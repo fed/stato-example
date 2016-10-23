@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
 import {baconify} from '../lib/baconify';
-import * as types from './reducers/types';
+import * as types from './state/types';
 
 const initialState = {
   items: [
