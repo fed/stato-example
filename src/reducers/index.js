@@ -1,38 +1,17 @@
-import remove from 'lodash/remove';
-import assign from 'lodash/assign';
+import {createItem, removeItem, markItemAsDone} from './items';
+import {addCountry} from './countries';
 
-export function createItem(state, newItemTitle) {
-  const items = state.items.concat([{
-    id: Date.now(),
-    title: newItemTitle,
-    isDone: false
-  }]);
-
-  return assign({}, state, { items });
-}
-
-export function removeItem(state, itemId) {
-  const items = state.items.slice();
-
-  remove(items, (item) => item.id === itemId);
-
-  return assign({}, state, { items });
-}
-
-export function markItemAsDone(state, itemId) {
-  const items = state.items.map((item) => {
-    if (item.id === itemId) {
-      item.isDone = true;
-    }
-
-    return item;
-  });
-
-  return assign({}, state, { items });
-}
-
-export function addCountry(state, newCountry) {
-  const countries = state.countries.concat([newCountry]);
-
-  return assign({}, state, { countries });
+export default function (actionType) {
+  switch (actionType) {
+    case 'CREATE_ITEM':
+      return createItem;
+    case 'REMOVE_ITEM':
+      return removeItem;
+    case 'MARK_ITEM_AS_DONE':
+      return markItemAsDone;
+    case 'ADD_COUNTRY':
+      return addCountry;
+    default:
+      return (state) => state;
+  }
 }

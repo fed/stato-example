@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
-import {bindActionsToReducers} from './utils/update';
+import {baconify} from '../lib/baconify';
 
 const initialState = {
   items: [
@@ -24,9 +24,6 @@ const initialState = {
   ]
 };
 
-// These are the props that will get passed in to the <App /> component
-const appState = bindActionsToReducers(initialState);
-
-appState.onValue((props) => {
+baconify(initialState, (props) => {
   ReactDOM.render(<App {...props} />, document.getElementById('app'));
 });
