@@ -1,6 +1,15 @@
 import remove from 'lodash/remove';
 import assign from 'lodash/assign';
 
+// Spinner
+export function showSpinner(state) {
+  return assign({}, state, { loading: true });
+}
+
+export function hideSpinner(state) {
+  return assign({}, state, { loading: false });
+}
+
 // To do items
 export function createItem(state, newItemTitle) {
   const items = state.items.concat([{

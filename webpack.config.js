@@ -34,6 +34,10 @@ module.exports = {
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader?modules=true&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader'
+      },
+      {
+        test: /\.png$/,
+        loader: 'url-loader?mimetype=image/png'
       }
     ]
   },

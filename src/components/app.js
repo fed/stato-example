@@ -1,4 +1,5 @@
 import React from 'react';
+import Spinner from './spinner/spinner';
 import CreateItem from './items/create';
 import ListItems from './items/list';
 import AddCountry from './countries/add';
@@ -12,6 +13,8 @@ export default class App extends React.Component {
         <header>
           <h1 className={styles.heading}>Functional Reactive State Management with Bacon.js</h1>
         </header>
+
+        <Spinner isVisible={this.props.loading} />
 
         <div className={styles.container}>
           {/* To do items */}
@@ -33,5 +36,6 @@ export default class App extends React.Component {
 
 App.propTypes = {
   items: React.PropTypes.array.isRequired,
-  countries: React.PropTypes.array.isRequired
+  countries: React.PropTypes.array.isRequired,
+  loading: React.PropTypes.bool.isRequired
 };

@@ -1,8 +1,19 @@
 import {store} from 'baconify';
 
-// Helpers
+export function showSpinner() {
+  store.push('SHOW_SPINNER');
+}
+
+export function hideSpinner() {
+  store.push('HIDE_SPINNER');
+}
+
 export function createItem(title) {
-  store.push('CREATE_ITEM', title);
+  store.push('SHOW_SPINNER');
+  setTimeout(() => {
+    store.push('CREATE_ITEM', title);
+    store.push('HIDE_SPINNER');
+  }, 1000);
 }
 
 export function removeItem(itemId) {
@@ -13,6 +24,10 @@ export function markItemAsDone(itemId) {
   store.push('MARK_ITEM_AS_DONE', itemId);
 }
 
-export function addCountry(title) {
-  store.push('ADD_COUNTRY', title);
+export function addCountry(country) {
+  store.push('SHOW_SPINNER');
+  setTimeout(() => {
+    store.push('ADD_COUNTRY', country);
+    store.push('HIDE_SPINNER');
+  }, 1000);
 }

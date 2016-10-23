@@ -20,7 +20,6 @@ export default class Create extends React.Component {
   handleKeyDown(event) {
     if (event.which === 13 && this.state.text) { // 13 == enter
       addCountry(this.state.text);
-      // store.push('ADD_COUNTRY', this.state.text);
 
       this.setState({
         text: ''
