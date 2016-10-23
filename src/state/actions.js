@@ -1,4 +1,4 @@
-import store from '../../lib/store';
+import {store} from 'baconify';
 
 // Helpers
 export function createItem(title) {

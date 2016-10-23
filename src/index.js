@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
-import {baconify} from '../lib/baconify';
+import {baconify} from 'baconify';
 import * as types from './state/types';
+import reducers from './state/';
 
 const initialState = {
   items: [
@@ -25,6 +26,6 @@ const initialState = {
   ]
 };
 
-baconify(initialState, types, (props) => {
+baconify(initialState, types, reducers, (props) => {
   ReactDOM.render(<App {...props} />, document.getElementById('app'));
 });

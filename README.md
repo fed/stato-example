@@ -23,7 +23,7 @@ The fundamental idea behind this approach is that every user-triggered action ge
 
 First grab the library here: https://www.npmjs.com/package/baconify
 
-1) Define your action **types**:
+1) Define your **action types**:
 
 ```js
 export const ADD_COUNTRY = 'ADD_COUNTRY';
@@ -31,7 +31,7 @@ export const ADD_COUNTRY = 'ADD_COUNTRY';
 
 2) Create your **reducers**:
 
-Reducers derive the next application state for a particular action. The first param is always the current state for the app, whereas the rest of the arguments are whatever payload your reducer needs.
+Reducers derive the next application state for a particular action. Reducers and action types have a 1:1 relationship. The first param is always the current state for the app, whereas the rest of the arguments are whatever payload your reducer needs.
 
 ```js
 export function addCountry(state, newCountry) {
