@@ -1,5 +1,7 @@
 import React from 'react';
-import {addCountry} from '../../state/actions';
+import store from 'store';
+import {ADD_COUNTRY} from 'actions';
+import {ENTER_KEY_CODE} from 'utils/constants';
 import styles from '../styles.css';
 
 export default class Create extends React.Component {
@@ -18,8 +20,8 @@ export default class Create extends React.Component {
   }
 
   handleKeyDown(event) {
-    if (event.which === 13 && this.state.text) { // 13 == enter
-      addCountry(this.state.text);
+    if (event.which === ENTER_KEY_CODE && this.state.text) {
+      store.push(ADD_COUNTRY, this.state.text);
 
       this.setState({
         text: ''

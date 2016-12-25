@@ -9,3 +9,7 @@ export const MARK_ITEM_AS_DONE = 'MARK_ITEM_AS_DONE';
 
 // Countries
 export const ADD_COUNTRY = 'ADD_COUNTRY';
+
+// GitHub usernames
+export const RECEIVE_USERS_LIST = 'RECEIVE_USERS_LIST';
+export const RECEIVE_USER_DETAILS = 'RECEIVE_USER_DETAILS';

@@ -1,5 +1,7 @@
 import React from 'react';
-import {createItem, showSpinner, hideSpinner} from '../../state/actions';
+import store from 'store';
+import {SHOW_SPINNER, CREATE_ITEM, HIDE_SPINNER} from 'actions';
+import {ENTER_KEY_CODE} from 'utils/constants';
 import styles from '../styles.css';
 
 export default class Create extends React.Component {
@@ -18,10 +20,10 @@ export default class Create extends React.Component {
   }
 
   handleKeyDown(event) {
-    if (event.which === 13 && this.state.text) { // 13 == enter
-      showSpinner();
-      createItem(this.state.text);
-      setTimeout(hideSpinner, 2000);
+    if (event.which === ENTER_KEY_CODE && this.state.text) {
+      store.push(SHOW_SPINNER); // triggers an action
+      store.push(CREATE_ITEM, this.state.text); // triggers an action
+      store.push(HIDE_SPINNER); // triggers an action
 
       this.setState({
         text: ''

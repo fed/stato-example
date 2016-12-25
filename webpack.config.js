@@ -1,3 +1,4 @@
+var path = require('path');
 var StyleLintPlugin = require('stylelint-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var precss = require('precss');
@@ -14,6 +15,11 @@ module.exports = {
     inline: true,
     publicPath: '/build/'
   },
+  resolve: {
+    root: [
+      path.resolve('./src/')
+    ]
+  },
   module: {
     preLoaders: [
       {
@@ -25,7 +31,6 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
         loader: 'babel',
         query: {
           presets: ['es2015', 'react']

@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
-import {baconify, store} from 'baconify';
-import * as types from './state/types';
-import reducers from './state/';
+import baconify from 'baconify';
+import store from './store';
+import reducers from './reducers';
 
-// Allows to trigger actions within the console
-window.store = store;
-
+// Initial state for the application
 const initialState = {
   loading: false,
   items: [
@@ -27,9 +25,12 @@ const initialState = {
     'New Zealand',
     'United Kingdom',
     'Ireland'
-  ]
+  ],
+  users: [],
+  user: {}
 };
 
-baconify(initialState, types, reducers, (props) => {
+// Initialise your application
+baconify(initialState, store, reducers, (props) => {
   ReactDOM.render(<App {...props} />, document.getElementById('app'));
 });
