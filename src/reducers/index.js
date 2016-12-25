@@ -69,13 +69,11 @@ export default {
   // ---------------------------
   // GitHub Users
   // ---------------------------
-  [RECEIVE_USERS_LIST]: (state, moreUsers) => {
-    const users = state.users.concat([moreUsers]);
-
+  [RECEIVE_USERS_LIST]: (state, users) => {
     return assign({}, state, { users });
   },
 
   [RECEIVE_USER_DETAILS]: (state, user) => {
     return assign({}, state, { user });
   }
-}
+};

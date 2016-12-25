@@ -4,9 +4,11 @@ import CreateItem from './items/create';
 import ListItems from './items/list';
 import AddCountry from './countries/add';
 import ListCountries from './countries/list';
+import ListUsers from './users/list';
+import UserDetails from './users/details';
 import styles from './styles.css';
 
-const App = ({ loading, items, countries }) => (
+const App = ({ loading, items, countries, users, user }) => (
   <section>
     <header>
       <h1 className={styles.heading}>Functional Reactive State Management with Bacon.js</h1>
@@ -15,7 +17,7 @@ const App = ({ loading, items, countries }) => (
     <Spinner isVisible={loading} />
 
     <div className={styles.container}>
-      {/* To do items */}
+      {/* TODO Items */}
       <div className={styles.box}>
         <CreateItem />
         <ListItems items={items} />
@@ -26,6 +28,16 @@ const App = ({ loading, items, countries }) => (
         <AddCountry />
         <ListCountries countries={countries} />
       </div>
+
+      {/* GitHub Users List */}
+      <div className={styles.box}>
+        <ListUsers users={users} />
+      </div>
+
+      {/* GitHub User Details */}
+      <div className={styles.box}>
+        <UserDetails user={user} />
+      </div>
     </div>
   </section>
 );
@@ -33,6 +45,8 @@ const App = ({ loading, items, countries }) => (
 App.propTypes = {
   items: React.PropTypes.array.isRequired,
   countries: React.PropTypes.array.isRequired,
+  users: React.PropTypes.array.isRequired,
+  user: React.PropTypes.object.isRequired,
   loading: React.PropTypes.bool.isRequired
 };
 
