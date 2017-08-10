@@ -1,4 +1,4 @@
-import {Store} from 'baconify';
+import {Store} from 'stato';
 
 // Instantiate application store
 const store = new Store();

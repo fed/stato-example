@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
-import baconify from 'baconify';
+import stato from 'stato';
 import store from './store';
 import reducers from './reducers';
 
@@ -31,6 +31,9 @@ const initialState = {
 };
 
 // Initialise your application
-baconify(initialState, store, reducers, (props) => {
-  ReactDOM.render(<App {...props} />, document.getElementById('app'));
+stato(initialState, store, reducers, (props) => {
+  ReactDOM.render(
+    <App {...props} />,
+    document.getElementById('app')
+);
 });

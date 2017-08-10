@@ -1,6 +1,6 @@
-# baconify-example
+# stato-example
 
-Handling state with FRP instead of Flux on React Apps.
+Handling state with FRP instead of Redux on React Apps.
 
 ![Example Screenshot](http://i.imgur.com/O56jhnE.jpg)
 

@@ -1,5 +1,6 @@
 {
-  "name": "bacon-react",
+  "private": true,
+  "name": "stato-example",
   "version": "1.0.0",
   "description": "React example using Bacon instead of Redux for unidirectional data flow and state handling",
   "main": "index.js",
@@ -10,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fknussel/bacon-react.git"
+    "url": "https://github.com/fknussel/stato-example.git"
   },
   "scripts": {
     "start": "webpack-dev-server --port 6789",
@@ -24,7 +25,6 @@
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
-    "baconify": "^1.0.0",
     "baconjs": "^0.7.85",
     "css-loader": "^0.26.1",
     "eslint": "^3.3.1",
@@ -37,6 +37,7 @@
     "precss": "^1.4.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
+    "stato": "^1.0.1",
     "style-loader": "^0.13.1",
     "stylelint-config-standard": "^15.0.1",
     "stylelint-webpack-plugin": "^0.4.2",
