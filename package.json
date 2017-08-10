@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "stato-example",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React example using Bacon instead of Redux for unidirectional data flow and state handling",
   "main": "index.js",
   "license": "MIT",
